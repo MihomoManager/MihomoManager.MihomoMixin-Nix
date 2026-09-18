@@ -7,7 +7,6 @@ Nix packaging for [MihomoManager.MihomoMixin](https://github.com/MihomoManager/M
 ```nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     mihomo-mixin.url = "github:MihomoManager/MihomoManager.MihomoMixin-Nix";
   };
 }
