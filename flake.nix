@@ -14,10 +14,15 @@
       forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
     in
     {
-      packages = forAllSystems (system: {
-        mihomo-manager-mihomo-mixin =
-          nixpkgs.legacyPackages.${system}.callPackage ./packages/mihomo-manager-mihomo-mixin
-            { };
-      });
+      packages = forAllSystems (
+        system:
+        let
+          package = nixpkgs.legacyPackages.${system}.callPackage ./package { };
+        in
+        {
+          mihomo-manager-mihomo-mixin = package;
+          default = package;
+        }
+      );
     };
 }
