@@ -12,6 +12,19 @@ Nix packaging for [MihomoManager.MihomoMixin](https://github.com/MihomoManager/M
 }
 ```
 
+> To avoid building from source, you can use the `yueyinqiu` Cachix binary cache:
+> 
+> ```nix
+> {
+>   nix.settings.extra-substituters = [
+>     "https://yueyinqiu.cachix.org"
+>   ];
+>   nix.settings.extra-trusted-public-keys = [
+>     "yueyinqiu.cachix.org-1:iooLFYpS7e6KAU4+QM5Zoj6Tq76jRGo+kjeAbu8JxAc="
+>   ];
+> }
+> ```
+
 ## Package
 
 The binary is exposed as `MihomoManager.MihomoMixin`:
