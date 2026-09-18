@@ -7,11 +7,23 @@ Nix packaging for [MihomoManager.MihomoMixin](https://github.com/MihomoManager/M
 ```nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     mihomo-mixin.url = "github:MihomoManager/MihomoManager.MihomoMixin-Nix";
   };
 }
 ```
+
+> To avoid building from source, you can use the `yueyinqiu` Cachix binary cache:
+> 
+> ```nix
+> {
+>   nix.settings.extra-substituters = [
+>     "https://yueyinqiu.cachix.org"
+>   ];
+>   nix.settings.extra-trusted-public-keys = [
+>     "yueyinqiu.cachix.org-1:iooLFYpS7e6KAU4+QM5Zoj6Tq76jRGo+kjeAbu8JxAc="
+>   ];
+> }
+> ```
 
 ## Package
 
